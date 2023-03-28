@@ -31,6 +31,10 @@ int _printf(const char *format, ...)
 					count += putchar('%');
 					break;
 				case 'd':
+					n = va_arg(args, int);
+					printf("%d", n);
+					count += snprintf(NULL, 0, "%d", n);
+					break;
 				case 'i':
 					n = va_arg(args, int);
 					printf("%d", n);
